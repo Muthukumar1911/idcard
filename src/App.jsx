@@ -1,97 +1,3 @@
-// import React, { useState, useRef } from 'react';
-// import './App.css';
-// import QRCode from 'react-qr-code';
-// import html2canvas from 'html2canvas';
-// import { saveAs } from 'file-saver'; // Change from 'downloadjs' to 'file-saver'
-
-// function App() {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     phone: '',
-//     address: '',
-//     photo: null,
-//     rollNo: ''
-//   });
-//   const idCardRef = useRef(null);
-
-//   const handleInputChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: value
-//     });
-//   };
-
-//   const handlePhotoChange = (e) => {
-//     setFormData({
-//       ...formData,
-//       photo: URL.createObjectURL(e.target.files[0])
-//     });
-//   };
-
-//   const downloadCard = () => {
-//     html2canvas(idCardRef.current).then(canvas => {
-//       canvas.toBlob(blob => {
-//         saveAs(blob, 'id_card.png');
-//       });
-//     });
-//   };
-
-//   return (
-//     <div className="App">
-      
-//       <h1 className='p-6 bg-slate-300 font-bold font-3xl'>ID Card Generator</h1>
-//       <div className='mx-auto  max-w-lg pt-5'>
-//       <form className='flex flex-col gap-5 pt-3'>
-        
-//           <input placeholder='Name' className='p-3 rounded-lg bg-slate-100' type="text" name="name" value={formData.name} onChange={handleInputChange} />
-       
-        
-          
-//           <input placeholder='Email' className='p-3 rounded-lg bg-slate-100' type="email" name="email" value={formData.email} onChange={handleInputChange} />
-       
-        
-//           <input placeholder='Mobile' className='p-3 rounded-lg bg-slate-100' type="tel" name="phone" value={formData.phone} onChange={handleInputChange} />
-       
-
-//           <input placeholder='Address' className='p-3 rounded-lg bg-slate-100' type="text" name="address" value={formData.address} onChange={handleInputChange} />
-        
-   
-//           <input placeholder='Picture' className='p-3 rounded-lg bg-slate-100' type="file" accept="image/*" onChange={handlePhotoChange} />
-       
-     
-//           <input placeholder='RollNo' className='p-3 rounded-lg bg-slate-100' type="text" name="rollNo" value={formData.rollNo} onChange={handleInputChange} />
-   
-//       </form>
-//       </div>
-
-
-//       <div className="id-card" ref={idCardRef}>
-//         <div className='vh-100 mx-auto'>
-//         <h2 className='text-center bg-blue-400 p-3 pb-6 text-white font-bold font-4xl '>MMM Technologies</h2>
-//         <div className='bg-blue-100 flex'>
-//           <div>
-//           {formData.photo && <img className='images' src={formData.photo} alt="Photo" />}
-//           <p>Name: {formData.name}</p>
-//           <p>Email: {formData.email}</p>
-//           <p>Phone: {formData.phone}</p>
-//           <p>Address: {formData.address}</p>
-//           <p>Roll No: {formData.rollNo}</p>
-//           </div>
-//           <div className=''>
-//           <QRCode className='qr-code' value={JSON.stringify(formData)} />
-//           </div>
-//         </div>
-//         </div>
-//       </div>
-//       <button onClick={downloadCard}>Download ID Card</button>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import React, { useState, useRef } from 'react';
 import './App.css';
 import QRCode from 'react-qr-code';
@@ -134,7 +40,7 @@ function App() {
 
   return (
     <div className="App flex justify-center items-center">
-      <div className="max-w-3xl border p-8 rounded-md shadow-md">
+      <div className="max-w-xl border p-8 rounded-md shadow-md">
         <h1 className="text-3xl font-bold text-center mb-6">ID Card Generator</h1>
         <form className="space-y-4 flex flex-col">
           <input className='p-3 rounded-lg bg-slate-100' placeholder="Name" type="text" name="name" value={formData.name} onChange={handleInputChange} />
